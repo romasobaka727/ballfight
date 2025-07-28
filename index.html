@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Ball Fight</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-app-status-bar-style" content="black">
+</head>
+<body>
+    <div id="game-container">
+        <div id="top-ui" class="hidden">
+            <div id="player-stats-left">
+                <div id="player-hp-display">HP: 100</div>
+                <div id="coins-display">Монеты: 0</div>
+            </div>
+            <button id="settings-btn-ingame">Настройки</button>
+            <button id="end-game-btn">Завершить игру</button>
+        </div>
+
+        <canvas id="gameCanvas" class="hidden"></canvas>
+
+        <div id="bottom-ui" class="hidden">
+            <button id="ult-btn">Ультимейт (0/3)</button>
+        </div>
+
+        <div id="shop-overlay" class="overlay hidden">
+            <h2 id="shop-title">Магазин</h2>
+            <p id="shop-description">Выбери оружие:</p>
+            <button id="buy-dagger-btn" data-weapon="DAGGER">Купить Кинжал (10 монет)</button>
+            <button id="close-shop-btn">Закрыть</button>
+        </div>
+
+        <div id="settings-overlay" class="overlay hidden">
+            <h2 id="settings-title">Настройки</h2>
+            <button id="language-btn">Язык</button>
+            <div id="language-options" class="hidden">
+                <button id="lang-en-btn" data-lang="en">English</button>
+                <button id="lang-ru-btn" data-lang="ru">Русский</button>
+            </div>
+            <button id="close-settings-btn">Закрыть</button>
+        </div>
+
+        <div id="initial-language-select-overlay" class="overlay hidden">
+            <h2>Select Language</h2>
+            <button id="initial-lang-en-btn" data-lang="en">English</button>
+            <button id="initial-lang-ru-btn" data-lang="ru">Русский</button>
+        </div>
+
+        <div id="language-reminder" class="overlay hidden">
+            <p id="reminder-text"></p>
+            <button id="reminder-close-btn">OK</button>
+        </div>
+
+        <div id="main-menu-overlay" class="overlay hidden">
+            <h2 id="player-name-display">Игрок: [Имя]</h2>
+            <button id="play-btn">Играть</button>
+            <button id="settings-btn-mainmenu">Настройки</button>
+            <button id="stats-btn-mainmenu">Статистика</button>
+        </div>
+
+        <div id="weapon-select-overlay" class="overlay hidden">
+            <h2 id="weapon-select-title">Выбери оружие</h2>
+            <button id="select-sword-btn" data-weapon="SWORD">Меч</button>
+            <button id="select-spear-btn" data-weapon="SPEAR">Копьё</button>
+            <button id="select-dagger-btn" data-weapon="DAGGER">Кинжал</button>
+            <button id="back-to-menu-btn">Назад в меню</button>
+        </div>
+
+        <div id="stats-overlay" class="overlay hidden">
+            <h2 id="stats-title">Статистика</h2>
+            <p id="stats-kills">Убийств: 0</p>
+            <p id="stats-deaths">Смертей: 0</p>
+            <button id="close-stats-btn">Закрыть</button>
+        </div>
+
+        <div id="death-overlay" class="overlay hidden">
+            <h2 id="death-title">Ты умер!</h2>
+        </div>
+
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
